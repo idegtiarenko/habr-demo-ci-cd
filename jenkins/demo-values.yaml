@@ -1,0 +1,44 @@
+Master:
+  Name: jenkins-master
+  Image: "jenkins/jenkins"
+  ImageTag: "2.163-slim"
+
+  OverwriteConfig: true
+
+  AdminUser: admin
+  AdminPassword: admin
+
+  InstallPlugins:
+    - kubernetes:1.14.3
+    - workflow-aggregator:2.6
+    - workflow-job:2.31
+    - credentials-binding:1.17
+    - git:3.9.3
+    - greenballs:1.15
+    - google-login:1.4
+    - role-strategy:2.9.0
+    - locale:1.4
+
+
+  ServicePort: 8080
+  ServiceType: NodePort
+#  NodePort: 32000
+#  ContainerPort: 8080
+  HostName: jenkins.192.168.99.100.nip.io
+  Ingress:
+    Path: /
+
+Agent:
+  Enabled: true
+  Image: "jenkins/jnlp-slave"
+  ImageTag: "3.27-1"
+  resources:
+    requests:
+      cpu: null
+      memory: null
+    limits:
+      cpu: null
+      memory: null
+
+rbac:
+  install: true
