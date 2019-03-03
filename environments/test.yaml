@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: test
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: environment.properties
+  namespace: test
+data:
+  environment.properties: |
+    env=test
