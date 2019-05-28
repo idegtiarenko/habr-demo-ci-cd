@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-helm upgrade jenkins stable/jenkins -f jenkins/demo-values.yaml
+helm upgrade jenkins stable/jenkins -f demo-values.yaml
