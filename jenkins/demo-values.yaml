@@ -9,14 +9,19 @@ master:
   adminPassword: admin
 
   installPlugins:
-    - kubernetes:1.15.5
+    - kubernetes:1.14.3
+    #    - kubernetes:1.16.0
     - workflow-aggregator:2.6
-    - workflow-job:2.32
-    - credentials-binding:1.18
-    - git:3.10.0
+    - workflow-job:2.31
+    #    - workflow-job:2.32
+    - credentials-binding:1.17
+    #    - credentials-binding:1.19
+    - git:3.9.3
+    #    - git:3.10.0
     - greenballs:1.15
     - google-login:1.4
     - role-strategy:2.9.0
+    #    - role-strategy:2.11
     - locale:1.4
 
   servicePort: 8080
